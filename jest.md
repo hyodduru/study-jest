@@ -70,3 +70,7 @@
   - 유저 플로우와 연관된 모든 단위를 포함.
   - 사용자가 소프트웨어와 상호 작용하는 방식이 밀접.
   - 하지만, 실패한 테스트를 디버깅하기 어려움.
+
+## 테스팅 라이브러리가 포함된 ESLint와 Prettier
+
+`npm install eslint-plugin-testing-library eslint-plugin-jest-dom`
