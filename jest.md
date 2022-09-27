@@ -74,3 +74,12 @@
 ## 테스팅 라이브러리가 포함된 ESLint와 Prettier
 
 `npm install eslint-plugin-testing-library eslint-plugin-jest-dom`
+
+## 유닛 테스트 함수
+
+- 컴포넌트로 부터 분리되어있는 함수들
+  - 몇개의 컴포넌트로부터 사용이 되므로
+  - 논리가 다소 복잡하기 때문에
+- 유닛 테스트가 사용되는 경우
+  - 테스트를 하기에는 논리가 너무 복잡한 경우
+  - 엣지 케이스가 너무 많은 경우

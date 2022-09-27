@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import App from "./App";
+import App, { replaceCamelWithSpaces } from "./App";
 
 // 초반에 버튼이 올바르게 있는지 확인한다.
 test("button has correct initial color", () => {
@@ -83,4 +83,16 @@ test("Clicked disabled has gray background and reverts to blue", () => {
   // re-enable button
   fireEvent.click(checkbox);
   expect(button).toHaveStyle("background-color : blue");
+});
+
+describe("spaces before camel-cases capital letters", () => {
+  test("Works for no inner capitel letters", () => {
+    expect(replaceCamelWithSpaces("Red")).toBe("Red");
+  });
+  test("Works for one inner capital letter", () => {
+    expect(replaceCamelWithSpaces("MidnightBlue")).toBe("Midnight Blue");
+  });
+  test("Works for multiple inner capital letters", () => {
+    expect(replaceCamelWithSpaces("MediumVioletRed")).toBe("Medium Violet Red");
+  });
 });
