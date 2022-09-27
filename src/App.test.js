@@ -34,3 +34,22 @@ test("initial condition", () => {
   const checkbox = screen.getByRole("checkbox");
   expect(checkbox).not.toBeChecked();
 });
+
+test("체크박스 체크 시 버튼 비활성화", () => {
+  render(<App />);
+
+  const checkbox = screen.getByRole("checkbox");
+  const button = screen.getByRole("button");
+
+  // 체크박스 체크
+  fireEvent.click(checkbox);
+
+  // 체크박스가 체크가 된 후 버튼의 비활성화 확인
+  expect(button).toBeDisabled();
+
+  // 체크박스 다시 클릭
+  fireEvent.click(checkbox);
+
+  // 버튼 다시 활성화 되는지 확인
+  expect(button).toBeEnabled();
+});
