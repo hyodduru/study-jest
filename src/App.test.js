@@ -38,8 +38,8 @@ test("initial condition", () => {
 test("체크박스 체크 시 버튼 비활성화", () => {
   render(<App />);
 
-  const checkbox = screen.getByRole("checkbox");
-  const button = screen.getByRole("button");
+  const checkbox = screen.getByRole("checkbox", { name: "Disable button" });
+  const button = screen.getByRole("button", { name: "Change to blue" });
 
   // 체크박스 체크
   fireEvent.click(checkbox);
