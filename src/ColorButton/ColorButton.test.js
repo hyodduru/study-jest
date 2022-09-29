@@ -1,9 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import App, { replaceCamelWithSpaces } from "./App";
+import ColorButton, { replaceCamelWithSpaces } from "./ColorButton";
 
 // 초반에 버튼이 올바르게 있는지 확인한다.
 test("button has correct initial color", () => {
-  render(<App />);
+  render(<ColorButton />);
 
   // find an element with a role of button and text of 'Change to blue'
   const colorButton = screen.getByRole("button", {
@@ -26,7 +26,7 @@ test("button has correct initial color", () => {
 });
 
 test("initial condition", () => {
-  render(<App />);
+  render(<ColorButton />);
 
   // check that the button starts out enabled
   const colorButton = screen.getByRole("button", {
@@ -40,7 +40,7 @@ test("initial condition", () => {
 });
 
 test("체크박스 체크 시 버튼 비활성화", () => {
-  render(<App />);
+  render(<d />);
 
   const checkbox = screen.getByRole("checkbox", { name: "Disable button" });
   const button = screen.getByRole("button", { name: "Change to MidnightBlue" });
@@ -59,7 +59,7 @@ test("체크박스 체크 시 버튼 비활성화", () => {
 });
 
 test("Disabled button has gray background and reverts to red", () => {
-  render(<App />);
+  render(<ColorButton />);
   const button = screen.getByRole("button");
   const checkbox = screen.getByRole("checkbox");
 
@@ -73,7 +73,7 @@ test("Disabled button has gray background and reverts to red", () => {
 });
 
 test("Clicked disabled has gray background and reverts to blue", () => {
-  render(<App />);
+  render(<ColorButton />);
   const button = screen.getByRole("button");
   const checkbox = screen.getByRole("checkbox");
 
