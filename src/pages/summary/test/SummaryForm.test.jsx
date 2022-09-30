@@ -1,5 +1,6 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import SummaryForm from "../SummaryForm";
+import userEvent from "@testing-library/user-event";
 
 test("initial test", () => {
   render(<SummaryForm />);
@@ -20,18 +21,15 @@ test("Checkbox disables button on first click and enables on second click", () =
   });
   const confirmButton = screen.getByRole("button", { name: /confirm order/i });
 
-  fireEvent.click(checkbox);
+  userEvent.click(checkbox);
   expect(confirmButton).toBeEnabled();
 
-  fireEvent.click(checkbox);
+  userEvent.click(checkbox);
   expect(confirmButton).toBeDisabled();
 });
 
-// checkbox is unchecked by default
-// checking checkbox enables button
-// unchecking checkbox again disables button
-
-// use tests from last section as a model
-// render the <summaryform /> component
-// use mockup for 'name' option values
-// check that tests fail! Red part of red-green testing
+test("popover responds to hover", () => {
+  // popover starts out hidden
+  // popover appears upon mouseover of checkbox label
+  // popover disappears when we mouse out
+});

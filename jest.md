@@ -100,3 +100,32 @@
 - getByRole option `{name : }`
 - Jest describe to group tests
 - Unit testing functions
+
+## screen Query Methods
+
+### command[All]ByQueryType
+
+#### command
+
+-`get` : 요소가 DOM 내에 있을 것을 expect한다.
+
+- `query` : 요소가 DOM 안에 있지 않을 것을 expect한다.
+- `find` : 요소가 비동기적으로 나타나기를 expect한다.
+
+#### [All]
+
+- 하나 이상의 match를 expect하는 경우 [All]을 포함시켜 전체 배열을 얻을 수 있도록 함.
+
+#### QueryType
+
+- 무엇으로 검색을 하는지를 의미한다.
+- `Role` (most prefered)
+- `AltText` (images)
+- `Text`(display elements)
+- Form elements
+
+  - `PlaceholderText`
+  - `LabelText`
+  - `DisplayValue`
+
+  ex) `getAllByText`, `findByAltText` 등
