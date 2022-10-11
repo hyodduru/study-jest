@@ -129,3 +129,18 @@
   - `DisplayValue`
 
   ex) `getAllByText`, `findByAltText` 등
+
+## Mock Service Worker
+
+- Mock Service Worker 의 사용 목적
+- 네트워크 호출을 가로채서 지정된 응답을 반환해야 하기 위해
+- 테스트하는 동안 발생하는 모든 네트워크 호출을 막는다.
+- 서버 응답에 기반한 테스트 조건을 설정한다.
+
+### Mock Service Worker Setup
+
+- `npm install msw`
+- 핸들러 생성 : 특정한 url과 라우트에 무엇을 반환할지 결정하는 함수
+- 테스트 서버 생성
+- 테스트하는 동안 테스트 서버가 항상 수신 대기 중인지 인터넷으로 나가는 호출을 가로채고 있는지 확인해야 함.
+  - 같은 파일에서 각 테스트 후에 서버 핸들러를 재설정 한다.
